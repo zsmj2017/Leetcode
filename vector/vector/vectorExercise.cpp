@@ -27,9 +27,9 @@ void RemoveDuplicatesFromSortedArray_2(vector<int> &nums) {
 	nums.erase(it, nums.end());
 }
 
-void RemoveDuplicatesFromSortedArray¢ò_1(vector<int> &nums) {
+void RemoveDuplicatesFromSortedArrayÂ¢Ã²_1(vector<int> &nums) {
 	//Brute Force
-	//Time:O(n) Space:O(1£©
+	//Time:O(n) Space:O(1Â£Â©
 	bool flag = false;
 	size_t oldsize = nums.size();
 	if (oldsize <= 2) return;
@@ -49,7 +49,7 @@ void RemoveDuplicatesFromSortedArray¢ò_1(vector<int> &nums) {
 	nums.resize(newsize);
 }
 
-void RemoveDuplicatesFromSortedArray¢ò_2(vector<int> &nums,int k) {
+void RemoveDuplicatesFromSortedArrayÂ¢Ã²_2(vector<int> &nums,int k) {
 	//A general solution for these problems in this type
 	//When we meet ith node,we only need to compare a[i] and a[i-k]
 	//The elements between them can't influence the result
@@ -124,7 +124,7 @@ int SearchInRotatedSortedArray_2(const vector<int> &nums, const int target) {
 	}
 }
 
-bool SearchInRotatedSortedArray¢ò(const vector<int> &nums, const int target) {
+bool SearchInRotatedSortedArrayÂ¢Ã²(const vector<int> &nums, const int target) {
 	if (nums.size() == 0) return -1;
 	int lo = 0, hi = nums.size();
 	int mid = -1;
@@ -187,7 +187,7 @@ int find_kth_element(const vector<int> &nums1, const vector<int> &nums2, size_t 
 }
 
 typedef  vector<int>::const_iterator VICI;
-int find_kth(VICI &Abegin, VICI &Aend, VICI &Bbegin, VICI &Bend, size_t k) {
+int find_kth(VICI Abegin, VICI Aend, VICI Bbegin, VICI Bend, size_t k) {
 	//Recursion solution to find kth element in two arrays
 	//Time:O(log(m+n)) Space:O(1)
 	//Assume A's size <= B's size
@@ -590,7 +590,7 @@ int TrappingRainWater_3(vector<int> &height) {
 
 int TrappingRainWater_4(vector<int> &height) {
 	//Use Stack to calculate the water
-	//Time: O(n) Space:O(1£©
+	//Time: O(n) Space:O(1Â£Â©
 	if (height.size() <= 2) return 0;
 	int ans = 0, current = 0;
 	stack<int> st;
@@ -657,7 +657,7 @@ vector<int> plusOne(vector<int>& digits) {
 
 int ClimbingStairs_1(int n) {
 	//Climbing Stairs is equivalent to getting nth Fibonacci
-	//p:F(n-1) q:F(n-2£©
+	//p:F(n-1) q:F(n-2Â£Â©
 	//Time:O(n) Space:O(1)
 	if (n <= 1) return 1;
 	int p = 1, q = 1;
@@ -856,7 +856,7 @@ int SingleNumber_2(vector<int> &nums) {
 	return res;
 }
 
-int SingleNumber¢ò_1(vector<int> &nums) {
+int SingleNumberÂ¢Ã²_1(vector<int> &nums) {
 	//Find sum of set bits at ith position in all array elements (no need to consider about '0')
 	//The bits with sum not multiple of 3, are the bits of element with single occurrence.
 	//Time:O(n) Space:O(1)
@@ -872,13 +872,13 @@ int SingleNumber¢ò_1(vector<int> &nums) {
 	return res;
 }
 
-int SingleNumber¢ò_2(vector<int> &nums) {
+int SingleNumberÂ¢Ã²_2(vector<int> &nums) {
 	//We know a number appears 3 times at most, so we need 2 bits to store the status
 	//We use ones as its first bit and twos as its second bit to store 4 status,and we only use 3 status.
 	//In this solution, the loop is 00->10->01->00
 	//Now what we need to do is just make ones and twos do what we want them to do.
-	//For ¡®ones¡¯, we can get ¡®ones = ones ^ A[i]; if (twos == 1) then ones = 0¡¯, that can be tansformed to ¡®ones = (ones ^ A[i]) & ~twos¡¯.
-	//For ¡®twos¡¯, we can get ¡®twos = twos ^ A[i]; if (ones == 1) then twos = 0¡¯ and ¡®twos = (twos ^ A[i]) & ~ones¡¯.
+	//For Â¡Â®onesÂ¡Â¯, we can get Â¡Â®ones = ones ^ A[i]; if (twos == 1) then ones = 0Â¡Â¯, that can be tansformed to Â¡Â®ones = (ones ^ A[i]) & ~twosÂ¡Â¯.
+	//For Â¡Â®twosÂ¡Â¯, we can get Â¡Â®twos = twos ^ A[i]; if (ones == 1) then twos = 0Â¡Â¯ and Â¡Â®twos = (twos ^ A[i]) & ~onesÂ¡Â¯.
 	//Use this method, we can solve any problem with this type
 	int ones = 0, twos = 0;
 	for (int i = 0; i != nums.size(); i++) {

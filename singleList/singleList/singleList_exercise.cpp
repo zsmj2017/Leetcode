@@ -62,7 +62,7 @@ ListNode* AddTwoNumbers(ListNode *l1, ListNode *l2) {
 	return preHead.next;
 }
 
-ListNode* ReverseLinkedList¢ò_1(ListNode *head, int m, int n) {
+ListNode* ReverseLinkedListÂ¢Ã²_1(ListNode *head, int m, int n) {
 	//Imitation of ReverseSingleList's iterative method
 	//Start         -1->1->2->3->4    reverse form 1 to 3
 	//ENDLOOP       -1<->1<-2 3->4
@@ -90,7 +90,7 @@ ListNode* ReverseLinkedList¢ò_1(ListNode *head, int m, int n) {
 	return prehead->next;
 }
 
-ListNode* ReverseLinkedList¢ò_2(ListNode *head, int m, int n) {
+ListNode* ReverseLinkedListÂ¢Ã²_2(ListNode *head, int m, int n) {
 	//1->2->3->4->5 should be 1->4->3->2->5
 	//When we start the loop,pre:1 start:2 then:3
 	//We need to move the start node to the end node's situation and this process need n-m loops
@@ -146,7 +146,7 @@ ListNode* RemoveDuplicatesFromSortedList(ListNode *head) {
 	return head;
 }
 
-ListNode* RemoveDuplicatesFromSortedList¢ò(ListNode *head) {
+ListNode* RemoveDuplicatesFromSortedListÂ¢Ã²(ListNode *head) {
 	//Time:O(n) Space:O(1)
 	if (head == nullptr || head->next == nullptr) return head;
 	ListNode prehaed(-1); prehaed.next = head;
@@ -208,7 +208,7 @@ ListNode* RemoveNthNodeFromEndOfList(ListNode* head, int n) {
 ListNode* SwapNodesInPairs_1(ListNode* head) {
 	//Just swap two node(cur && then) in one loop
 	//When we don't have a pair,end the loop
-	//Time:O(n£© Space:O(1)
+	//Time:O(nÂ£Â© Space:O(1)
 	ListNode prehead(-1); prehead.next = head;
 	ListNode *pre = &prehead, *cur = head, *then = cur->next;
 	while (cur && then) {
@@ -232,7 +232,7 @@ ListNode* SwapNodesInPairs_2(ListNode* head) {
 	//When we swap the pair's node
 	//*pp=b so now pair's head change to the second element
 	//pp = &(a->next),so pp is the adress of the new pair's first element
-	//Time:O(n£© Space:O(1)
+	//Time:O(nÂ£Â© Space:O(1)
 	ListNode **pp = &head, *a, *b;
 	while ((a = *pp) && (b = a->next)) {
 		a->next = b->next;
@@ -346,7 +346,7 @@ RandomListNode * CopyListWithRandomPointer(RandomListNode *head) {
 
 bool LinkedListCircle_1(ListNode *head) {
 	//Use a hash_set to store all nodes
-	//Time:O(n) Space:O(n£©
+	//Time:O(n) Space:O(nÂ£Â©
 	using std::unordered_set;
 	unordered_set<ListNode*> used;
 	if (!head) return false;
@@ -374,9 +374,9 @@ bool LinkedListCircle_2(ListNode *head) {
 	return false;
 }
 
-ListNode* LinkedListCircle¢ò_1(ListNode *head) {
+ListNode* LinkedListCircleÂ¢Ã²_1(ListNode *head) {
 	//Use a hashset
-	//Time:O(n) Space:O(n£©
+	//Time:O(n) Space:O(nÂ£Â©
 	using std::unordered_set;
 	unordered_set<ListNode*> used;
 	if (!head) return nullptr;
@@ -390,11 +390,11 @@ ListNode* LinkedListCircle¢ò_1(ListNode *head) {
 	return nullptr;
 }
 
-ListNode* LinkedListCircle¢ò_2(ListNode *head) {
+ListNode* LinkedListCircleÂ¢Ã²_2(ListNode *head) {
 	//It is easy to understand when p meet q,p run fast than q k nodes
 	//k is the length of the circle
 	//Assume they meet at ith node,
-	//Define the distance between start node and ith node: S
+	//Define the distance between head and the circleâ€™s start node: S
 	//Define the distance between circle's start node and ith node:M obviously,K=S+M
 	//We confirm that p run S step will come back to the circle's start node
 	//So we set a point res run from start node,when res meet p
