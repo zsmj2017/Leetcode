@@ -1,0 +1,9 @@
+﻿  binaryTree_exercise.cpp
+c:\users\zsmj\documents\github\leetcode\binarytree\binarytree\binarytree_exercise.cpp(554): error C3861: “CreateBinaryFromPreAndInOrder”: 找不到标识符
+c:\users\zsmj\documents\github\leetcode\binarytree\binarytree\binarytree_exercise.cpp(567): error C3861: “CreateBinaryFromInAndPostOrder”: 找不到标识符
+c:\users\zsmj\documents\github\leetcode\binarytree\binarytree\binarytree_exercise.cpp(641): error C3861: “toBST”: 找不到标识符
+c:\users\zsmj\documents\github\leetcode\binarytree\binarytree\binarytree_exercise.cpp(666): error C3861: “convertBST”: 找不到标识符
+c:\users\zsmj\documents\github\leetcode\binarytree\binarytree\binarytree_exercise.cpp(702): error C3861: “pathSumhelper”: 找不到标识符
+c:\users\zsmj\documents\github\leetcode\binarytree\binarytree\binarytree_exercise.cpp(720): error C3861: “dfsMaxSum”: 找不到标识符
+c:\users\zsmj\documents\github\leetcode\binarytree\binarytree\binarytree_exercise.cpp(736): error C3861: “connectHelper”: 找不到标识符
+c:\users\zsmj\documents\github\leetcode\binarytree\binarytree\binarytree_exercise.cpp(755): error C3861: “sumTree”: 找不到标识符
