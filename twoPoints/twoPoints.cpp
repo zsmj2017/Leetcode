@@ -222,3 +222,26 @@ int longestSubstring(string s, int k) {
 
     return res;
 }
+
+// 3. Longest Substring Without Repeating Characters
+// 滑动窗口解题
+// 需要注意更新左边界时取max，防止造成滑动窗口边界左移的情况，如bad case"abba"
+int lengthOfLongestSubstring(string s) {
+    if (s.size() <= 1) {
+        return s.size();
+    }
+
+    vector<int> curChars(128, -1);
+
+    int res = 0;
+
+    for (int l = 0, r = 0; r < s.size(); ++r) {
+        if (curChars[s[r]] != -1) {
+            l = max(curChars[s[r]], l);  // 更新左边界
+        }
+        curChars[s[r]] = r + 1;
+        res = max(res, r - l + 1);
+    }
+
+    return res;
+}
