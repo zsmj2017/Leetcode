@@ -180,3 +180,30 @@ double findKthElementInSortedArrays(int nums1[], int m, int nums2[], int n, int 
         return findKthElementInSortedArrays(nums1 + pa, m - pa, nums2, n, k - pa);
     }
 }
+
+
+// https://leetcode.com/problems/search-a-2d-matrix/description/
+// 这道题只能暴力遍历逐行，二分求解
+// 速度居然还行，击败了80%多
+bool searchMatrix(vector<vector<int>>& matrix, int target) {
+    if(matrix.empty() || matrix[0].empty()) {
+        return false;
+    }
+
+    int i = 0;
+
+    while (i < matrix.size()) {
+        if (matrix[i][0] == target) {
+            return true;
+        } else if (matrix[i][0] < target) {
+            if (binary_search(matrix[i].begin(), matrix[i].end(), target)){
+                return true;
+            } else {
+                ++i;
+            }
+        } else {
+            return false;
+        }
+    }
+    return false;
+}
