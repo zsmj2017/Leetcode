@@ -245,3 +245,26 @@ int lengthOfLongestSubstring(string s) {
 
     return res;
 }
+
+bool isPalindrome(string s) {
+    if (s.size() == 1) {
+        return true;
+    }
+    int first = 0;
+    int last = s.size() - 1;
+    while (first < last) {
+      while (!isalnum(s[first]) && first < last) {
+        ++first;
+      }
+      while (!isalnum(s[last]) && first < last) {
+        --last;
+      }
+      if (tolower(s[first]) == tolower(s[last])) {
+        ++first;
+        --last;
+      } else {
+        return false;
+      }
+    }
+    return true;
+}
